@@ -1,0 +1,121 @@
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-body">
+      <div class="bench">
+        <div class="col-sm-6">
+          <h1>Bench</h1>
+        </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Add Bench
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Resource</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-floating">
+                      <select class="myselect form-select">
+                        <option>A to Z Solutions</option>
+                        <option>Bacany</option>
+                        <option>Harapz</option>
+                        <option>Sight Spectrum</option>
+                      </select>
+                      <label class="form-label">Select Partner</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-floating">
+                      <select class="myselect form-select">
+                        <option>Asp.Net</option>
+                        <option>Ajax</option>
+                        <option>Jquery</option>
+                        <option>Word Press</option>
+                      </select>
+                      <label class="form-label">Skill Sets</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-floating">
+                      <label class="form-label">Rate Card</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <p>Show
+            <select>
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+              <option>100</option>
+            </select>
+            entries
+          </p>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+        <section class="section">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Partner</th>
+                          <th>No. of Resource</th>
+                          <th>Skillset</th>
+                          <th>Rate Card ($)</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <a href="" class="me-3" data-bs-toggle="modal" data-bs-target="#addResource"><i
+                                class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i></a>
+                            <a href="" class="me-3 text-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"><i
+                                class="bi bi-trash"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <p>Showing 1 to 1 of 1 entries</p>
+          <ul class="pagination d-flex">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
