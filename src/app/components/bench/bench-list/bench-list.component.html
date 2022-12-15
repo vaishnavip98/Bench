@@ -1,0 +1,42 @@
+<app-add-bench-bar></app-add-bench-bar>
+<div class="container mt-3">
+  <div class="card">
+    <div class="card-body">
+      <app-modal></app-modal>
+      <app-bench-header></app-bench-header>
+      <section class="section">
+        <div class="row">
+          <div class="col-sm-12">
+            <div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Partner</th>
+                    <th>No. of Resource</th>
+                    <th>Skillset</th>
+                    <th>Rate Card ($)</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let bench of benchs">
+                    <td>{{bench.partnerId}}</td>
+                    <td>{{bench.noOfResource}}</td>
+                    <td>{{bench.skillSet}}</td>
+                    <td>{{bench.ratePerHrUSD}}</td>
+                    <td>
+                      <a href="" class="me-3" data-bs-toggle="modal">
+                        <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i></a>
+                      <a href="" class="me-3 text-danger" data-bs-toggle="modal">
+                        <i class="bi bi-trash"></i></a>
+                  </td>
+                  </tr>
+                </tbody>
+              </table>
+              <app-pagination></app-pagination>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>

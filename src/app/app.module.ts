@@ -3,16 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BenchComponent } from './bench/bench.component';
+import { BenchComponent } from './components/bench/bench-list/bench-list.component';
+import { ModalComponent } from './components/bench/modal/modal.component';
+import { PaginationComponent } from './components/bench/pagination/pagination.component';
+import { BenchHeaderComponent } from './components/bench/bench-header/bench-header.component';
+import { AddBenchBarComponent } from './components/bench/add-bench-bar/add-bench-bar.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AddBenchComponent } from './components/bench/add-bench/add-bench.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BenchComponent
+    BenchComponent,
+    ModalComponent,
+    PaginationComponent,
+    BenchHeaderComponent,
+    AddBenchBarComponent,
+    AddBenchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

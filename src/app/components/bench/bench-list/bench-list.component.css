@@ -1,8 +1,4 @@
-.bench{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+
 .page{
     display: flex;
     justify-content:space-between;
