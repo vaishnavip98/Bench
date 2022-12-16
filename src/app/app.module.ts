@@ -11,6 +11,8 @@ import { AddBenchBarComponent } from './components/bench/add-bench-bar/add-bench
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddBenchComponent } from './components/bench/add-bench/add-bench.component';
 import { FormsModule } from '@angular/forms';
+import { DataTablesModule } from "angular-datatables";
+import { EditBenchComponent } from './components/bench/edit-bench/edit-bench.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,17 @@ import { FormsModule } from '@angular/forms';
     PaginationComponent,
     BenchHeaderComponent,
     AddBenchBarComponent,
-    AddBenchComponent
+    AddBenchComponent,
+    EditBenchComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

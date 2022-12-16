@@ -17,4 +17,12 @@ export class AdminBenchService {
     
     return this.http.get<Bench[]>(this.baseApiUrl + '/api/AdminBench');
   }
+
+
+  getBenchById(benchId:string):Observable<Bench>{
+
+    return this.http.get<Bench>(this.baseApiUrl+'/api/AdminBench/'+benchId);
+
+  }
+
 }

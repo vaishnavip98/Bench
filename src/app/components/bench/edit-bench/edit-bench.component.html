@@ -1,0 +1,48 @@
+ <!-- Modal -->
+ <form #form="ngForm">
+    <div class="modal fade" id="editResource" tabindex="-1" aria-labelledby="editResource" aria-hidden="true">
+       <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="editResourceLabel">Edit Resource</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             <div class="form-group">
+               <label class="form-label">Select Partner</label>
+               <select class="myselect form-select">
+                 <option>A to Z Solutions</option>
+                 <option>Bacany</option>
+                 <option>Harapz</option>
+                 <option>Sight Spectrum</option>
+               </select>
+             </div>
+             <div class="form-group">
+               <label>No. Of Resource</label>
+               <input class="form-control form-control-lg" placeholder="Enter Resource" id="NoOfResource"
+              >
+               </div>
+              <div class="form-group">
+              <label>Skill Set</label>
+               <input class="form-control form-control-lg" placeholder="SkillSet" id="SkillSet"
+               >
+               </div>
+               <div class="form-group">
+                <label>Years Of Experince</label>
+                 <input class="form-control form-control-lg" placeholder="YearsOfExperince" id="YearsOfExperince"
+                 >
+              </div>
+              <div class="form-group">
+               <label>Rate Card ($)</label>
+              <input class="form-control form-control-lg" placeholder="Rate Card ($)" id="RatePerHrUSD"
+             >
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+             <button type="button" class="btn btn-primary btnSubmit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="">Submit</button>
+         </div>
+         </div>
+       </div>
+     </div>
+   </form>

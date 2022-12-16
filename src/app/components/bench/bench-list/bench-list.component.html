@@ -14,6 +14,7 @@
                     <th>Partner</th>
                     <th>No. of Resource</th>
                     <th>Skillset</th>
+                    <th>Years Of Experince</th>
                     <th>Rate Card ($)</th>
                     <th>Action</th>
                   </tr>
@@ -23,13 +24,16 @@
                     <td>{{bench.partnerId}}</td>
                     <td>{{bench.noOfResource}}</td>
                     <td>{{bench.skillSet}}</td>
+                    <td>{{bench.yearsOfExperince}}</td>
                     <td>{{bench.ratePerHrUSD}}</td>
                     <td>
-                      <a href="" class="me-3" data-bs-toggle="modal">
+                      <a href="" class="me-3" data-bs-toggle="modal" data-bs-target="#editResource" (click)="edit(bench.id)">
                         <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i></a>
                       <a href="" class="me-3 text-danger" data-bs-toggle="modal">
                         <i class="bi bi-trash"></i></a>
                   </td>
+
+                  <app-edit-bench></app-edit-bench>
                   </tr>
                 </tbody>
               </table>

@@ -1,36 +1,39 @@
  <!-- Modal -->
- <form #form="ngForm" (ngSubmit)="addBench()">
- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <form #form="ngForm">
+ <div class="modal fade" id="addResource" tabindex="-1" aria-labelledby="addResource" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Resource</h5>
+          <h5 class="modal-title" id="addResourceLabel">Add Resource</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="form-group">
             <label class="form-label">Select Partner</label>
-            <select class="myselect form-select">
-              <option>A to Z Solutions</option>
-              <option>Bacany</option>
-              <option>Harapz</option>
-              <option>Sight Spectrum</option>
+            <select>
+              <option *ngFor="let partner of partnerList" > 
+                {{partner}} </option>
             </select>
           </div>
           <div class="form-group">
             <label>No. Of Resource</label>
             <input class="form-control form-control-lg" placeholder="Enter Resource" id="NoOfResource"
-            name="NoOfResource" [(ngModel)]="addBenchRequest.NoOfResource">
+           >
             </div>
            <div class="form-group">
            <label>Skill Set</label>
             <input class="form-control form-control-lg" placeholder="SkillSet" id="SkillSet"
-            name="SkillSet" [(ngModel)]="addBenchRequest.SkillSet">
+            >
+            </div>
+            <div class="form-group">
+              <label>Years Of Experince</label>
+               <input class="form-control form-control-lg" placeholder="YearsOfExperince" id="YearsOfExperince"
+               >
             </div>
            <div class="form-group">
             <label>Rate Card ($)</label>
            <input class="form-control form-control-lg" placeholder="Rate Card ($)" id="RatePerHrUSD"
-           name="RatePerHrUSD" [(ngModel)]="addBenchRequest.RatePerHrUSD">
+          >
           </div>
         </div>
         <div class="modal-footer">

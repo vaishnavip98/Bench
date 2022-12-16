@@ -3,4 +3,5 @@ export interface Bench{
     NoOfResource: number;
     SkillSet: string;
     RatePerHrUSD: number;
+    YearsOfExperince: string;
 }

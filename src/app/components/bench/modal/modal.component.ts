@@ -1,22 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Bench } from 'src/app/models/bench.model';
 
 @Component({
   selector: 'app-modal',
-  templateUrl: './modal.component.html',
+  templateUrl:'./modal.component.html',
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent {
+  
+partnerList:string[]=[];
 
-  addBenchRequest: Bench = {
-    PartnerId: 1,
-    NoOfResource: 0 ,
-    SkillSet: '',
-    RatePerHrUSD: 0,
-
-  };
-  addBench(){
-    console.log(this.addBenchRequest);
-  }
 
 }
