@@ -1,5 +1,5 @@
 export interface Bench{
-    PartnerId: Number;
+    PartnerId: any;
     NoOfResource: number;
     SkillSet: string;
     RatePerHrUSD: number;
