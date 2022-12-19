@@ -1,8 +1,55 @@
 <app-add-bench-bar></app-add-bench-bar>
+<!-- Modal -->
+ <form #form="ngForm">
+  <div class="modal fade" id="addResource" tabindex="-1" aria-labelledby="addResource" aria-hidden="true">
+     <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="addResourceLabel">Add Resource</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+           <div class="form-group">
+             <label class="form-label">Partner</label>
+             <select id="partnerId" [(ngModel)] = "addBenchRequest.partnerId" name="partnerId">
+               <!-- <option value="" default>Select Partner</option> -->
+               <option value="{{partner.partnerId}}" *ngFor="let partner of partnerList"> 
+               {{partner.partnerName}} </option>
+             </select>
+           </div>
+           <div class="form-group">
+             <label for="NoOfResource">No. Of Resource</label>
+             <input class="form-control form-control-lg" type="text" id="noOfResource"
+            [(ngModel)] = "addBenchRequest.noOfResource" name="noOfResource">
+             </div>
+            <div class="form-group">
+            <label for="SkillSet">Skill Set</label>
+             <input class="form-control form-control-lg" type="text" id="skillSet"
+             [(ngModel)] = "addBenchRequest.skillSet" name="skillSet">
+             </div>
+             <div class="form-group">
+               <label for="YearsOfExperince">Years Of Experince</label>
+                <input class="form-control form-control-lg" type="text" id="yearsOfExperince"
+                [(ngModel)] = "addBenchRequest.yearsOfExperince" name="yearsOfExperince">
+             </div>
+            <div class="form-group">
+             <label for="RatePerHrUSD">Rate Card ($)</label>
+            <input class="form-control form-control-lg" type="text" id="ratePerHrUSD"
+            [(ngModel)] = "addBenchRequest.ratePerHrUSD" name="ratePerHrUSD" >
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+           <button (click)="addBench()" class="btn btn-primary btnSubmit" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="">Submit</button>
+       </div>
+       </div>
+     </div>
+   </div>
+ </form>
 <div class="container mt-3">
   <div class="card">
     <div class="card-body">
-      <app-modal></app-modal>
+      <app-add-bench></app-add-bench>
       <app-bench-header></app-bench-header>
       <section class="section">
         <div class="row">
@@ -21,20 +68,74 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let bench of benchs">
-                    <td>{{bench.partnerId}}</td>
+                    <td>{{bench.benchName}}</td>
                     <td>{{bench.noOfResource}}</td>
                     <td>{{bench.skillSet}}</td>
                     <td>{{bench.yearsOfExperince}}</td>
                     <td>{{bench.ratePerHrUSD}}</td>
                     <td>
-                      <a href="" class="me-3" data-bs-toggle="modal" data-bs-target="#editResource">
+                      <a class="me-3" data-bs-toggle="modal" data-bs-target="#editResource" (click)="editBench(bench)">
                         <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i></a>
-                      <a href="" class="me-3 text-danger" data-bs-toggle="modal">
+                      <a href="" (click)="deleteBench(bench.benchId)" class="me-3 text-danger" data-bs-toggle="modal">
                         <i class="bi bi-trash"></i></a>
-                  </td>
+                    </td>
                   </tr>
                 </tbody>
-                <app-edit-bench></app-edit-bench>
+                <!-- <app-edit-bench></app-edit-bench> -->
+                <!-- Modal -->
+                <form #form="ngForm" >
+                  <div class="modal fade" id="editResource" tabindex="-1" aria-labelledby="editResource"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="editResourceLabel">Edit Resource</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- <div class="form-group">
+                            <label for="BenchId">Bench Id</label>
+                            <input class="form-control form-control-lg" type="text" id="BenchId" readonly
+                              [(ngModel)]="selectedBench.benchId" name="benchId">
+                          </div> -->
+                          <div class="form-group">
+                            <label class="form-label">Partner</label>
+                            <select id="partnerId" [(ngModel)]="selectedBench.partnerId" name="partnerId">
+                              <!-- <option value="" default>Select Partner</option> -->
+                              <option value="{{partner.partnerId}}" *ngFor="let partner of partnerList">
+                                {{partner.partnerName}} </option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="NoOfResource">No. Of Resource</label>
+                            <input class="form-control form-control-lg" type="text" id="NoOfResource"
+                              [(ngModel)]="selectedBench.noOfResource" name="NoOfResource">
+                          </div>
+                          <div class="form-group">
+                            <label for="SkillSet">Skill Set</label>
+                            <input class="form-control form-control-lg" type="text" id="SkillSet"
+                              [(ngModel)]="selectedBench.skillSet" name="SkillSet">
+                          </div>
+                          <div class="form-group">
+                            <label for="YearsOfExperince">Years Of Experince</label>
+                            <input class="form-control form-control-lg" type="text" id="YearsOfExperince"
+                              [(ngModel)]="selectedBench.yearsOfExperince" name="YearsOfExperince">
+                          </div>
+                          <div class="form-group">
+                            <label for="RatePerHrUSD">Rate Card ($)</label>
+                            <input class="form-control form-control-lg" type="text" id="RatePerHrUSD"
+                              [(ngModel)]="selectedBench.ratePerHrUSD" name="RatePerHrUSD">
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary btnSubmit" data-bs-dismiss="modal"
+                            data-bs-toggle="modal" data-bs-target="">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </table>
               <app-pagination></app-pagination>
             </div>

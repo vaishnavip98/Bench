@@ -1,7 +1,9 @@
 export interface Bench{
-    PartnerId: any;
-    NoOfResource: number;
-    SkillSet: string;
-    RatePerHrUSD: number;
-    YearsOfExperince: string;
+    benchId:string;
+    benchName:string;
+    partnerId: any;
+    noOfResource: number;
+    skillSet: string;
+    ratePerHrUSD: number;
+    yearsOfExperince: string;
 }
