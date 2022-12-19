@@ -28,6 +28,7 @@ export class BenchComponent implements OnInit {
     ratePerHrUSD: 0,
     yearsOfExperince: ""
   };
+  addBenchRevisied:any;
   partnerList: any[] = [];
 
   constructor(private adminBenchService: AdminBenchService) { }
@@ -84,8 +85,38 @@ export class BenchComponent implements OnInit {
     })
   }
   addBench() {
-    console.log(this.addBenchRequest);
-    this.adminBenchService.addBench(this.addBenchRequest).subscribe({
+    // this.addBenchRevisied.benchId=this.addBenchRequest.benchId;
+    // this.addBenchRevisied.partnerId=this.addBenchRequest.partnerId;
+    // this.addBenchRevisied.noOfResource=this.addBenchRequest.noOfResource;
+    // this.addBenchRevisied.skillSet=this.addBenchRequest.skillSet;
+    // this.addBenchRevisied.ratePerHrUSD=this.addBenchRequest.ratePerHrUSD;
+    // this.addBenchRevisied.yearsOfExperince=this.addBenchRequest.yearsOfExperince;
+    
+    console.log(this.addBenchRevisied);
+    this.adminBenchService.addBench({partnerId:this.addBenchRequest.partnerId,
+      noOfResource:this.addBenchRequest.noOfResource,
+      skillSet:this.addBenchRequest.skillSet,
+      ratePerHrUSD:this.addBenchRequest.ratePerHrUSD,
+    yearsOfExperince:this.addBenchRequest.yearsOfExperince
+    }).subscribe({
+      next: (bench) => {
+        console.log(bench);
+        window.location.reload();
+      },
+      error: (response) => {
+        console.log(response);
+      }
+    })
+  }
+
+  updateBench(){
+    console.log(this.addBenchRevisied);
+    this.adminBenchService.editBench({partnerId:this.addBenchRequest.partnerId,
+      noOfResource:this.addBenchRequest.noOfResource,
+      skillSet:this.addBenchRequest.skillSet,
+      ratePerHrUSD:this.addBenchRequest.ratePerHrUSD,
+    yearsOfExperince:this.addBenchRequest.yearsOfExperince
+    },this.addBenchRequest.benchId).subscribe({
       next: (bench) => {
         console.log(bench);
         window.location.reload();

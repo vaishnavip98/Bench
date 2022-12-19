@@ -19,10 +19,13 @@ export class AdminBenchService {
     return this.http.get<Bench[]>(this.baseApiUrl + '/api/AdminBench');
   }
 
-  addBench(addBenchRequest: Bench):Observable<Bench>{
-    return this.http.post<Bench>(this.baseApiUrl+'/api/AdminBench', addBenchRequest);
+  addBench(addBenchRequest: any):Observable<any>{
+    return this.http.post<any>(this.baseApiUrl+'/api/AdminBench', addBenchRequest);
   }
 
+  editBench(addBenchRequest: any,id:string):Observable<any>{
+    return this.http.put<any>(this.baseApiUrl+'/api/AdminBench/'+ id, addBenchRequest);
+  }
   getBenchById(benchId:string):Observable<Bench>{
 
     return this.http.get<Bench>(this.baseApiUrl+'/api/AdminBench/'+ benchId);
@@ -51,6 +54,11 @@ export class AdminBenchService {
 
   updateBench(benchId:any, updateBenchRequest: Bench): Observable<Bench>{
     return this.http.put<Bench>(this.baseApiUrl + '/api/AdminBench/' + benchId, updateBenchRequest);
+  }
+
+  searchBench(value:string){
+      return this.http.get<any>(this.baseApiUrl + '/api/Search/'+ value );
+      
   }
 
 
